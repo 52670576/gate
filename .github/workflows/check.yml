@@ -1,11 +1,7 @@
 name: VPN Gate Node Check
 
 on:
-  workflow_dispatch:  # 保留手动触发
-  schedule:
-    # cron 格式：分 时 日 月 周
-    # 下面示例：UTC 每天 0 点 → 北京时间 早上 8 点
-    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -72,4 +68,4 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Show site URL
-        run: echo "site: https://52670576.github.io/gate/ (deploy outcome: ${{ steps.deployment.outcome }})"
+        run: 'echo "site: https://52670576.github.io/gate/ (deploy outcome: ${{ steps.deployment.outcome }})"'
